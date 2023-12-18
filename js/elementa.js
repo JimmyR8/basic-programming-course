@@ -1,6 +1,22 @@
-function selectionPetPlayer() {
-    alert('YOU SELECTED YOUR PET')
+function startGame() {
+    let buttonPetPlayer = document.getElementById('button-pet')
+    buttonPetPlayer.addEventListener('click', selectionPetPlayer)    
 }
 
-let buttonPetPlayer = document.getElementById('button-pet')
-buttonPetPlayer.addEventListener('click', selectionPetPlayer)
+function selectionPetPlayer() {
+    let inputHipodoge = document.getElementById('hipodoge')
+    let inputCapipepo = document.getElementById('capipepo')
+    let inputRatigueya = document.getElementById('ratigueya')
+
+    if(inputHipodoge.checked) {
+        alert('You selected Hipodoge')
+    } else if(inputCapipepo.checked) {
+        alert('You selected Capipepo')
+    } else if(inputRatigueya.checked) {
+        alert('You selected Ratigueya')
+    } else {
+        alert('Select a pet')
+    }
+}
+
+window.addEventListener('load', startGame)
