@@ -1,6 +1,17 @@
+let playerAttack
+
 function startGame() {
     let buttonPetPlayer = document.getElementById('button-pet')
-    buttonPetPlayer.addEventListener('click', selectionPetPlayer)    
+    buttonPetPlayer.addEventListener('click', selectionPetPlayer)  
+
+    let buttonFire = document.getElementById('button-fire')
+    buttonFire.addEventListener('click', fireAttack)
+
+    let buttonWater = document.getElementById('button-water')
+    buttonWater.addEventListener('click', waterAttack)
+
+    let buttonEarth = document.getElementById('button-earth')  
+    buttonEarth.addEventListener('click', earthAttack)
 }
 
 function selectionPetPlayer() {
@@ -36,6 +47,19 @@ function selectionPetEnemy() {
     } else {
         spantPetPEnemy.innerHTML = ('Ratigueya')
     }
+}
+
+function fireAttack() {
+    playerAttack = ('FIRE')
+    alert(playerAttack)
+}
+function waterAttack() {
+    playerAttack = ('WATER')
+    alert(playerAttack)
+}
+function earthAttack() {
+    playerAttack = ('EARTH')
+    alert(playerAttack)
 }
 
 function random(min, max) {
