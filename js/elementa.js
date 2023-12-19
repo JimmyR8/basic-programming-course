@@ -21,6 +21,25 @@ function selectionPetPlayer() {
     } else {
         alert('Select a pet')
     }
+
+    selectionPetEnemy()
+}
+
+function selectionPetEnemy() {
+    let attackRandom = random(1,3)
+    let spantPetPEnemy = document.getElementById('pet-enemy')
+    
+    if(attackRandom == 1) {
+        spantPetPEnemy.innerHTML = ('Hipodoge')
+    } else if (attackRandom == 2) {
+        spantPetPEnemy.innerHTML = ('Capipepo')
+    } else {
+        spantPetPEnemy.innerHTML = ('Ratigueya')
+    }
+}
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 window.addEventListener('load', startGame)
