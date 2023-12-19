@@ -1,4 +1,5 @@
 let playerAttack
+let enemyAttack
 
 function startGame() {
     let buttonPetPlayer = document.getElementById('button-pet')
@@ -37,29 +38,41 @@ function selectionPetPlayer() {
 }
 
 function selectionPetEnemy() {
-    let attackRandom = random(1,3)
+    let petRandom = random(1,3)
     let spantPetPEnemy = document.getElementById('pet-enemy')
     
-    if(attackRandom == 1) {
+    if(petRandom == 1) {
         spantPetPEnemy.innerHTML = ('Hipodoge')
-    } else if (attackRandom == 2) {
+    } else if (petRandom == 2) {
         spantPetPEnemy.innerHTML = ('Capipepo')
     } else {
         spantPetPEnemy.innerHTML = ('Ratigueya')
     }
 }
 
+function enemyAttackRandom() {
+    let randomAttack = random(1,3)
+
+    if(randomAttack == 1) {
+        enemyAttack = ('FIRE')
+    } else if(randomAttack == 2) {
+        enemyAttack = ('WATER')
+    } else {
+        enemyAttack = ('EARTH')
+    }
+}
+
 function fireAttack() {
     playerAttack = ('FIRE')
-    alert(playerAttack)
+    enemyAttackRandom()
 }
 function waterAttack() {
     playerAttack = ('WATER')
-    alert(playerAttack)
+    enemyAttackRandom()
 }
 function earthAttack() {
     playerAttack = ('EARTH')
-    alert(playerAttack)
+    enemyAttackRandom()
 }
 
 function random(min, max) {
