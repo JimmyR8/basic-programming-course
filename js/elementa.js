@@ -42,37 +42,48 @@ function selectionPetEnemy() {
     let spantPetPEnemy = document.getElementById('pet-enemy')
     
     if(petRandom == 1) {
-        spantPetPEnemy.innerHTML = ('Hipodoge')
+        spantPetPEnemy.innerHTML = 'Hipodoge'
     } else if (petRandom == 2) {
-        spantPetPEnemy.innerHTML = ('Capipepo')
+        spantPetPEnemy.innerHTML = 'Capipepo'
     } else {
-        spantPetPEnemy.innerHTML = ('Ratigueya')
+        spantPetPEnemy.innerHTML = 'Ratigueya'
     }
+}
+
+function fireAttack() {
+    playerAttack = 'FIRE'
+    enemyAttackRandom()
+}
+function waterAttack() {
+    playerAttack = 'WATER'
+    enemyAttackRandom()
+}
+function earthAttack() {
+    playerAttack = 'EARTH'
+    enemyAttackRandom()
 }
 
 function enemyAttackRandom() {
     let randomAttack = random(1,3)
 
     if(randomAttack == 1) {
-        enemyAttack = ('FIRE')
+        enemyAttack = 'FIRE'
     } else if(randomAttack == 2) {
-        enemyAttack = ('WATER')
+        enemyAttack = 'WATER'
     } else {
-        enemyAttack = ('EARTH')
+        enemyAttack = 'EARTH'
     }
+
+    createMenssage()
 }
 
-function fireAttack() {
-    playerAttack = ('FIRE')
-    enemyAttackRandom()
-}
-function waterAttack() {
-    playerAttack = ('WATER')
-    enemyAttackRandom()
-}
-function earthAttack() {
-    playerAttack = ('EARTH')
-    enemyAttackRandom()
+function createMenssage() {
+    let sectionMessage = document.getElementById('message')
+    
+    let text = document.createElement('p')
+    text.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemy pet attacked with ' + enemyAttack + '- YOU WIN! 🥳'
+
+    sectionMessage.appendChild(text)
 }
 
 function random(min, max) {
