@@ -1,1 +1,1 @@
-# basic-programming-course
+# basic-programming-course-with-html-js
