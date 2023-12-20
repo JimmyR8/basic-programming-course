@@ -74,17 +74,32 @@ function enemyAttackRandom() {
         enemyAttack = 'EARTH'
     }
 
-    createMenssage()
+    combat()
 }
 
-function createMenssage() {
+function combat() {
+    if(enemyAttack == playerAttack) {
+        createMenssage('TIE 😐')
+    } else if(playerAttack == 'FIRE' && enemyAttack == 'EARTH') {
+        createMenssage('YOU WIN 🥳')
+    } else if(playerAttack == 'WATER' && enemyAttack == 'FIRE') {
+        createMenssage('YOU WIN 🥳')
+    } else if(playerAttack == 'EARTH' && enemyAttack == 'WATER') {
+        createMenssage('YOU WIN 🥳')
+    } else {
+        createMenssage('YOU LOSE 😭')
+    }
+}
+
+function createMenssage(result) {
     let sectionMessage = document.getElementById('message')
     
     let text = document.createElement('p')
-    text.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemy pet attacked with ' + enemyAttack + '- YOU WIN! 🥳'
+    text.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemy pet attacked with ' + enemyAttack + '- ' + result
 
     sectionMessage.appendChild(text)
 }
+
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
