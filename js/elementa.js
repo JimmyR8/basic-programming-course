@@ -86,21 +86,33 @@ function combat() {
     if(enemyAttack == playerAttack) {
         createMenssage('TIE 😐')
     } else if(playerAttack == 'FIRE' && enemyAttack == 'EARTH') {
-        createMenssage('YOU WIN 🥳')
         enemyLives--
         spantEnemyLives.innerHTML = enemyLives
+        createMenssage('YOU WIN 🥳')
     } else if(playerAttack == 'WATER' && enemyAttack == 'FIRE') {
-        createMenssage('YOU WIN 🥳')
         enemyLives--
         spantEnemyLives.innerHTML = enemyLives
+        createMenssage('YOU WIN 🥳')
     } else if(playerAttack == 'EARTH' && enemyAttack == 'WATER') {
-        createMenssage('YOU WIN 🥳')
         enemyLives--
         spantEnemyLives.innerHTML = enemyLives
+        createMenssage('YOU WIN 🥳')
     } else {
-        createMenssage('YOU LOSE 😭')
         playerLives--
         spantPlayerLives.innerHTML = playerLives
+        createMenssage('YOU LOSE 😭')
+    }
+
+    reviewLives()
+}
+
+function reviewLives() {
+    if(enemyLives == 0) { 
+        alert('CONGRATULATIONS, YOU WIN THE GAME 🥳')
+        endgameMessage('CONGRATULATIONS, YOU WIN THE GAME 🥳')
+    } else if(playerLives == 0) {
+        alert('SORRY 😢, YOU LOST THE GAME, TRY AGAIN')
+        endgameMessage('SORRY 😢, YOU LOST THE GAME, TRY AGAIN')
     }
 }
 
@@ -113,6 +125,14 @@ function createMenssage(result) {
     sectionMessage.appendChild(text)
 }
 
+function endgameMessage(endResult) {
+    let sectionMessage = document.getElementById('message')
+    
+    let text = document.createElement('p')
+    text.innerHTML = endResult
+
+    sectionMessage.appendChild(text)
+}
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
