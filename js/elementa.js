@@ -4,15 +4,19 @@ let playerLives = 3
 let enemyLives = 3
 
 function startGame() {
+    let sectionAttack = document.getElementById('select-attack')
+    sectionAttack.style.display = 'none'
+
+    let sectionRestar = document.getElementById('button-restar')
+    sectionRestar.style.display = 'none'
+
     let buttonPetPlayer = document.getElementById('button-pet')
     buttonPetPlayer.addEventListener('click', selectionPetPlayer)  
 
     let buttonFire = document.getElementById('button-fire')
     buttonFire.addEventListener('click', fireAttack)
-
     let buttonWater = document.getElementById('button-water')
     buttonWater.addEventListener('click', waterAttack)
-
     let buttonEarth = document.getElementById('button-earth')  
     buttonEarth.addEventListener('click', earthAttack)
 
@@ -22,6 +26,12 @@ function startGame() {
 }
 
 function selectionPetPlayer() {
+    let sectionPet = document.getElementById('select-pet')
+    sectionPet.style.display = 'none'
+
+    let sectionAttack = document.getElementById('select-attack')
+    sectionAttack.style.display = 'block'
+
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')
     let inputRatigueya = document.getElementById('ratigueya')
@@ -38,6 +48,7 @@ function selectionPetPlayer() {
         spantPetPlayer.innerHTML = 'Ratigueya'
     } else {
         alert('Select a pet')
+        restarGame()
     }
 
     selectionPetEnemy()
@@ -60,10 +71,12 @@ function fireAttack() {
     playerAttack = 'FIRE'
     enemyAttackRandom()
 }
+
 function waterAttack() {
     playerAttack = 'WATER'
     enemyAttackRandom()
 }
+
 function earthAttack() {
     playerAttack = 'EARTH'
     enemyAttackRandom()
@@ -146,6 +159,8 @@ function endgameMessage(endResult) {
     let buttonEarth = document.getElementById('button-earth')  
     buttonEarth.disabled = true
 
+    let sectionRestar = document.getElementById('button-restar')
+    sectionRestar.style.display = 'block'
 }
 
 function random(min, max) {
