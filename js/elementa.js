@@ -128,7 +128,7 @@ function createMenssage(result) {
 function endgameMessage(endResult) {
     let sectionMessage = document.getElementById('message')
     
-    let text = document.createElement('p')
+    let text = document.createElement('h2')
     text.innerHTML = endResult
 
     sectionMessage.appendChild(text)
