@@ -15,6 +15,10 @@ function startGame() {
 
     let buttonEarth = document.getElementById('button-earth')  
     buttonEarth.addEventListener('click', earthAttack)
+
+    
+    let buttonRestar = document.getElementById('button-restar')
+    buttonRestar.addEventListener('click', restarGame)
 }
 
 function selectionPetPlayer() {
@@ -132,10 +136,24 @@ function endgameMessage(endResult) {
     text.innerHTML = endResult
 
     sectionMessage.appendChild(text)
+
+    let buttonFire = document.getElementById('button-fire')
+    buttonFire.disabled = true
+
+    let buttonWater = document.getElementById('button-water')
+    buttonWater.disabled = true
+
+    let buttonEarth = document.getElementById('button-earth')  
+    buttonEarth.disabled = true
+
 }
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function restarGame() {
+    location.reload()
 }
 
 window.addEventListener('load', startGame)
