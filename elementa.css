@@ -1,8 +1,7 @@
-.titulo  {
-    color: #FF3BFC;
-    width: 355px;
-    height: 50px;
-    background-color: teal;
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body {
+    font-family: 'Itim', cursive;
 }
 
 #select-pet {
@@ -10,6 +9,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.titulo  {
+    color: white
+}
+
+.subtitle {
+
+}
+
+.cards {
+    display: flex;
+    
 }
 
 .card-of-elementa {
@@ -20,16 +32,6 @@
     box-sizing: border-box;
     margin: 10px;
     border: 1px solid teal;
-}
-
-#button-pet {
-    width: 100px;
-    height: 50px;
-    background: #bbff00;
-    padding: 10px;
-    box-sizing: border-box;
-    margin: 10px;
-    border: 2px solid rgb(255, 0, 0);
 }
 
 input {
