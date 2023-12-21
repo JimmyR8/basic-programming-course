@@ -11,3 +11,17 @@
     justify-content: center;
     align-items: center;
 }
+
+.card-of-elementa {
+    width: 100px;
+    height: 100px;
+    background: #FF3BFC;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid teal;
+}
+
+input {
+    display: none;
+}
