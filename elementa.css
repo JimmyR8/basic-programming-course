@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Itim', cursive;
+    background-color: #83A2FF;
 }
 
 #select-pet {
@@ -12,11 +13,13 @@ body {
 }
 
 .titulo  {
-    color: white
+    color: white;
+    font-size: 48px;
 }
 
 .subtitle {
-
+    color: white;
+    font-size: 33px;
 }
 
 .cards {
@@ -25,13 +28,22 @@ body {
 }
 
 .card-of-elementa {
-    width: 100px;
+    color: white;
+    width: 180px;
     height: 100px;
-    background: #FF3BFC;
+    background: #B4BDFF;
     padding: 10px;
     box-sizing: border-box;
     margin: 10px;
     border: 1px solid teal;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-of-elementa img {
+    width: 80px;
 }
 
 input {
