@@ -22,6 +22,16 @@
     border: 1px solid teal;
 }
 
+#button-pet {
+    width: 100px;
+    height: 50px;
+    background: #bbff00;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 2px solid rgb(255, 0, 0);
+}
+
 input {
     display: none;
 }
