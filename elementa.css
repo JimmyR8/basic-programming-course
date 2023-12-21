@@ -5,20 +5,9 @@
     background-color: teal;
 }
 
-label {
-    background-color: khaki;
-    width: 355px;
-    height: 50px;
-}
-
-input {
-    background-color: aqua;
-    width: 355px;
-    height: 50px;
-}
-
-button {
-    background-color: blueviolet;
-    width: 355px;
-    height: 50px;
+#select-pet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
