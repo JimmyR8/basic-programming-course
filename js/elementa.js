@@ -30,7 +30,7 @@ function selectionPetPlayer() {
     sectionPet.style.display = 'none'
 
     let sectionAttack = document.getElementById('select-attack')
-    sectionAttack.style.display = 'block'
+    sectionAttack.style.display = 'flex'
 
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')

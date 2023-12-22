@@ -63,3 +63,23 @@ body {
 input {
     display: none;
 }
+
+#select-attack {
+    flex-direction: column;
+    align-items: center;
+}
+
+.attacks {
+    width: 100px;
+    height: 50px;
+    border: 2px solid aqua;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #5D3587;
+    color: white;
+    margin: 10px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
