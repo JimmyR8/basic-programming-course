@@ -83,3 +83,32 @@ input {
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
+
+#message {
+    color: white;
+    width: 280px;
+    background: #A367B1;
+    border: 2px solid aqua;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+#button-restar {
+    width: 100px;
+    height: 50px;
+    border: 2px solid aqua;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #5D3587;
+    color: white;
+    margin: 10px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}

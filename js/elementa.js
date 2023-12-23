@@ -125,30 +125,33 @@ function combat() {
 
 function reviewLives() {
     if(enemyLives == 0) { 
-        alert('CONGRATULATIONS, YOU WIN THE GAME 🥳')
-        endgameMessage('CONGRATULATIONS, YOU WIN THE GAME 🥳')
+        endgameMessage('YOU WIN THE GAME 🥳')
     } else if(playerLives == 0) {
-        alert('SORRY 😢, YOU LOST THE GAME, TRY AGAIN')
-        endgameMessage('SORRY 😢, YOU LOST THE GAME, TRY AGAIN')
+        endgameMessage('YOU LOST THE GAME 😢')
     }
 }
 
 function createMenssage(result) {
-    let sectionMessage = document.getElementById('message')
-    
-    let text = document.createElement('p')
-    text.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemy pet attacked with ' + enemyAttack + '- ' + result
+    let sectionMessage = document.getElementById('result')
+    let palyerOfAttack = document.getElementById('player-of-attack')
+    let enemyOfAttack = document.getElementById('enemy-of-attack')
 
-    sectionMessage.appendChild(text)
+    let notification = document.createElement('p')
+    let newPlayerOfAttack = document.createElement('p')
+    let newEnemyOfAttack = document.createElement('p')
+
+    sectionMessage.innerHTML = result
+    newPlayerOfAttack.innerHTML = playerAttack
+    newEnemyOfAttack.innerHTML = enemyAttack
+
+    palyerOfAttack.appendChild(newPlayerOfAttack)
+    enemyOfAttack.appendChild(newEnemyOfAttack)
 }
 
 function endgameMessage(endResult) {
-    let sectionMessage = document.getElementById('message')
+    let sectionMessage = document.getElementById('result')
     
-    let text = document.createElement('h2')
-    text.innerHTML = endResult
-
-    sectionMessage.appendChild(text)
+    sectionMessage.innerHTML = endResult
 
     let buttonFire = document.getElementById('button-fire')
     buttonFire.disabled = true
