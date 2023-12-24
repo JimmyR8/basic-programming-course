@@ -37,7 +37,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     margin: 10px;
-    border: 2px solid aqua;
+    border: 2px solid transparent;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -51,7 +51,7 @@ body {
 #button-pet {
     width: 135px;
     height: 50px;
-    border: 2px solid aqua;
+    border: 2px solid transparent;
     border-radius: 20px;
     background-color: #5D3587;
     color: white;
@@ -82,7 +82,7 @@ input:checked + label {
 .attacks {
     width: 150px;
     height: 50px;
-    border: 2px solid aqua;
+    border: 2px solid transparent;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
@@ -98,7 +98,7 @@ input:checked + label {
     color: white;
     width: 280px;
     background: #A367B1;
-    border: 2px solid aqua;
+    border: 2px solid transparent;
     margin-top: 20px;
     padding: 20px;
     border-radius: 20px;
@@ -111,7 +111,7 @@ input:checked + label {
 #button-restar {
     width: 150px;
     height: 50px;
-    border: 2px solid aqua;
+    border: 2px solid transparent;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
@@ -132,7 +132,7 @@ input:checked + label {
     grid-template-columns: 100px 100px;
     color: white;
     background-color: #A367B1;
-    border: 2px solid aqua;
+    border: 2px solid transparent;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
