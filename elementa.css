@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@300&family=Rubik+Broken+Fax&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #392467;
@@ -12,6 +12,7 @@ body {
 }
 
 .titulo  {
+    margin-bottom: 0px;
     color: white;
     font-size: 48px;
     font-family: 'Itim', cursive;
@@ -20,6 +21,7 @@ body {
 .subtitle {
     color: white;
     font-size: 33px;
+    margin-bottom: 10px;
 }
 
 .cards, .cards-attacks {
@@ -35,7 +37,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     margin: 10px;
-    border: 1px solid aqua;
+    border: 2px solid aqua;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -47,21 +49,29 @@ body {
 }
 
 #button-pet {
-    width: 100px;
+    width: 135px;
     height: 50px;
     border: 2px solid aqua;
     border-radius: 20px;
     background-color: #5D3587;
     color: white;
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
 
+#button-pet:hover {
+    background-color: violet;
+}
+
 input {
     display: none;
+}
+
+input:checked + label {
+    background-color: violet;
 }
 
 #select-attack {
@@ -70,7 +80,7 @@ input {
 }
 
 .attacks {
-    width: 100px;
+    width: 150px;
     height: 50px;
     border: 2px solid aqua;
     padding: 10px;
@@ -99,7 +109,7 @@ input {
 }
 
 #button-restar {
-    width: 100px;
+    width: 150px;
     height: 50px;
     border: 2px solid aqua;
     padding: 10px;
@@ -113,21 +123,44 @@ input {
     font-family: 'Poppins', sans-serif;
 }
 
+#button-restar:hover {
+    background-color: violet;
+}
+
 .attack {
     display: grid;
     grid-template-columns: 100px 100px;
     color: white;
+    background-color: #A367B1;
+    border: 2px solid aqua;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+}
+
+button:hover {
+    background-color: violet;
 }
 
 #player-lives, #enemy-lives {
     font-size: 32px;
     margin-bottom: 0;
+    font-family: 'Rubik Broken Fax', sans-serif;
+}
+
+#pet-player, #pet-enemy {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .player-attacks, .enemy-attacks {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 @media (max-width: 360px) {

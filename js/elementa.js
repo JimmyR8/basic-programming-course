@@ -38,13 +38,10 @@ function selectionPetPlayer() {
     let spantPetPlayer = document.getElementById('pet-player')
 
     if(inputHipodoge.checked) {
-        alert('You selected Hipodoge')
         spantPetPlayer.innerHTML = 'Hipodoge'
     } else if(inputCapipepo.checked) {
-        alert('You selected Capipepo')
         spantPetPlayer.innerHTML = 'Capipepo'
     } else if(inputRatigueya.checked) {
-        alert('You selected Ratigueya')
         spantPetPlayer.innerHTML = 'Ratigueya'
     } else {
         alert('Select a pet')
@@ -68,17 +65,17 @@ function selectionPetEnemy() {
 }
 
 function fireAttack() {
-    playerAttack = 'FIRE'
+    playerAttack = 'FIRE 🔥'
     enemyAttackRandom()
 }
 
 function waterAttack() {
-    playerAttack = 'WATER'
+    playerAttack = 'WATER 💧'
     enemyAttackRandom()
 }
 
 function earthAttack() {
-    playerAttack = 'EARTH'
+    playerAttack = 'EARTH 🌱'
     enemyAttackRandom()
 }
 
@@ -86,11 +83,11 @@ function enemyAttackRandom() {
     let randomAttack = random(1,3)
 
     if(randomAttack == 1) {
-        enemyAttack = 'FIRE'
+        enemyAttack = 'FIRE 🔥'
     } else if(randomAttack == 2) {
-        enemyAttack = 'WATER'
+        enemyAttack = 'WATER 💧'
     } else {
-        enemyAttack = 'EARTH'
+        enemyAttack = 'EARTH 🌱'
     }
 
     combat()
@@ -102,15 +99,15 @@ function combat() {
 
     if(enemyAttack == playerAttack) {
         createMenssage('TIE 😐')
-    } else if(playerAttack == 'FIRE' && enemyAttack == 'EARTH') {
+    } else if(playerAttack == 'FIRE 🔥' && enemyAttack == 'EARTH 🌱') {
         enemyLives--
         spantEnemyLives.innerHTML = enemyLives
         createMenssage('YOU WIN 🥳')
-    } else if(playerAttack == 'WATER' && enemyAttack == 'FIRE') {
+    } else if(playerAttack == 'WATER 💧' && enemyAttack == 'FIRE 🔥') {
         enemyLives--
         spantEnemyLives.innerHTML = enemyLives
         createMenssage('YOU WIN 🥳')
-    } else if(playerAttack == 'EARTH' && enemyAttack == 'WATER') {
+    } else if(playerAttack == 'EARTH 🌱' && enemyAttack == 'WATER 💧') {
         enemyLives--
         spantEnemyLives.innerHTML = enemyLives
         createMenssage('YOU WIN 🥳')
