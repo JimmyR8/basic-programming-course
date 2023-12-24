@@ -112,3 +112,8 @@ input {
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
+
+.attack {
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
