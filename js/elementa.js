@@ -1,10 +1,30 @@
-let sectionAttack = document.getElementById('select-attack')
-let sectionRestar = document.getElementById('button-restar')
-let buttonPetPlayer = document.getElementById('button-pet')
-let buttonFire = document.getElementById('button-fire')
-let buttonWater = document.getElementById('button-water')
-let buttonEarth = document.getElementById('button-earth') 
-let buttonRestar = document.getElementById('button-restar')
+const sectionAttack = document.getElementById('select-attack')
+const sectionRestar = document.getElementById('button-restar')
+const buttonPetPlayer = document.getElementById('button-pet')
+const buttonFire = document.getElementById('button-fire')
+const buttonWater = document.getElementById('button-water')
+const buttonEarth = document.getElementById('button-earth') 
+const buttonRestar = document.getElementById('button-restar')
+
+
+const sectionPet = document.getElementById('select-pet')
+const inputHipodoge = document.getElementById('hipodoge')
+const inputCapipepo = document.getElementById('capipepo')
+const inputRatigueya = document.getElementById('ratigueya')
+const spantPetPlayer = document.getElementById('pet-player')
+
+
+const spantPetPEnemy = document.getElementById('pet-enemy')
+
+
+const spantPlayerLives = document.getElementById('player-lives')
+const spantEnemyLives = document.getElementById('enemy-lives')
+
+
+const sectionMessage = document.getElementById('result')
+const palyerOfAttack = document.getElementById('player-of-attack')
+const enemyOfAttack = document.getElementById('enemy-of-attack')
+
 
 let playerAttack
 let enemyAttack
@@ -32,16 +52,13 @@ function startGame() {
 }
 
 function selectionPetPlayer() {
-    let sectionPet = document.getElementById('select-pet')
+    
     sectionPet.style.display = 'none'
 
-    let sectionAttack = document.getElementById('select-attack')
+    
     sectionAttack.style.display = 'flex'
 
-    let inputHipodoge = document.getElementById('hipodoge')
-    let inputCapipepo = document.getElementById('capipepo')
-    let inputRatigueya = document.getElementById('ratigueya')
-    let spantPetPlayer = document.getElementById('pet-player')
+    
 
     if(inputHipodoge.checked) {
         spantPetPlayer.innerHTML = 'Hipodoge'
@@ -59,7 +76,6 @@ function selectionPetPlayer() {
 
 function selectionPetEnemy() {
     let petRandom = random(1,3)
-    let spantPetPEnemy = document.getElementById('pet-enemy')
     
     if(petRandom == 1) {
         spantPetPEnemy.innerHTML = 'Hipodoge'
@@ -100,9 +116,6 @@ function enemyAttackRandom() {
 }
 
 function combat() {
-    let spantPlayerLives = document.getElementById('player-lives')
-    let spantEnemyLives = document.getElementById('enemy-lives')
-
     if(enemyAttack == playerAttack) {
         createMenssage('TIE 😐')
     } else if(playerAttack == 'FIRE 🔥' && enemyAttack == 'EARTH 🌱') {
@@ -135,10 +148,6 @@ function reviewLives() {
 }
 
 function createMenssage(result) {
-    let sectionMessage = document.getElementById('result')
-    let palyerOfAttack = document.getElementById('player-of-attack')
-    let enemyOfAttack = document.getElementById('enemy-of-attack')
-
     let notification = document.createElement('p')
     let newPlayerOfAttack = document.createElement('p')
     let newEnemyOfAttack = document.createElement('p')
@@ -152,20 +161,20 @@ function createMenssage(result) {
 }
 
 function endgameMessage(endResult) {
-    let sectionMessage = document.getElementById('result')
+    
     
     sectionMessage.innerHTML = endResult
 
-    let buttonFire = document.getElementById('button-fire')
+    
     buttonFire.disabled = true
 
-    let buttonWater = document.getElementById('button-water')
+    
     buttonWater.disabled = true
 
-    let buttonEarth = document.getElementById('button-earth')  
+     
     buttonEarth.disabled = true
 
-    let sectionRestar = document.getElementById('button-restar')
+    
     sectionRestar.style.display = 'block'
 }
 
