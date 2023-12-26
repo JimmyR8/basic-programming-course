@@ -1,27 +1,33 @@
+let sectionAttack = document.getElementById('select-attack')
+let sectionRestar = document.getElementById('button-restar')
+let buttonPetPlayer = document.getElementById('button-pet')
+let buttonFire = document.getElementById('button-fire')
+let buttonWater = document.getElementById('button-water')
+let buttonEarth = document.getElementById('button-earth') 
+let buttonRestar = document.getElementById('button-restar')
+
 let playerAttack
 let enemyAttack
 let playerLives = 3
 let enemyLives = 3
 
 function startGame() {
-    let sectionAttack = document.getElementById('select-attack')
+    
     sectionAttack.style.display = 'none'
-
-    let sectionRestar = document.getElementById('button-restar')
     sectionRestar.style.display = 'none'
 
-    let buttonPetPlayer = document.getElementById('button-pet')
+    
     buttonPetPlayer.addEventListener('click', selectionPetPlayer)  
 
-    let buttonFire = document.getElementById('button-fire')
+    
     buttonFire.addEventListener('click', fireAttack)
-    let buttonWater = document.getElementById('button-water')
+    
     buttonWater.addEventListener('click', waterAttack)
-    let buttonEarth = document.getElementById('button-earth')  
+     
     buttonEarth.addEventListener('click', earthAttack)
 
     
-    let buttonRestar = document.getElementById('button-restar')
+    
     buttonRestar.addEventListener('click', restarGame)
 }
 
