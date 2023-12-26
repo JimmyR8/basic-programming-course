@@ -31,6 +31,19 @@ let enemyAttack
 let playerLives = 3
 let enemyLives = 3
 
+class Elementa {
+    constructor(name, image, life) {
+        this.name = name
+        this.image = image
+        this.life = life
+    }
+}
+
+let hipodoge = new Elementa('Hipodoge', 'images/hipodoge.png', 5)
+ let capipepo = new Elementa('Capipepo', 'images/capipepo.png', 5)
+
+ let ratigueya = new Elementa('Capipepo', 'images/ratigueya.png', 5)
+
 function startGame() {
     
     sectionAttack.style.display = 'none'
