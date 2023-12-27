@@ -119,11 +119,11 @@ function selectionPetPlayer() {
     
 
     if(inputHipodoge.checked) {
-        spantPetPlayer.innerHTML = 'Hipodoge'
+        spantPetPlayer.innerHTML = inputHipodoge.id
     } else if(inputCapipepo.checked) {
-        spantPetPlayer.innerHTML = 'Capipepo'
+        spantPetPlayer.innerHTML = inputCapipepo.id
     } else if(inputRatigueya.checked) {
-        spantPetPlayer.innerHTML = 'Ratigueya'
+        spantPetPlayer.innerHTML = inputRatigueya.id
     } else {
         alert('Select a pet')
         restarGame()
