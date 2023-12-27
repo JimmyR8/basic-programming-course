@@ -133,15 +133,9 @@ function selectionPetPlayer() {
 }
 
 function selectionPetEnemy() {
-    let petRandom = random(1,3)
+    let petRandom = random(0, petElementa.length - 1)
     
-    if(petRandom == 1) {
-        spantPetPEnemy.innerHTML = 'Hipodoge'
-    } else if (petRandom == 2) {
-        spantPetPEnemy.innerHTML = 'Capipepo'
-    } else {
-        spantPetPEnemy.innerHTML = 'Ratigueya'
-    }
+    spantPetPEnemy.innerHTML = petElementa[petRandom].name
 }
 
 function fireAttack() {
