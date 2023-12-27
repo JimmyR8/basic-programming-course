@@ -30,6 +30,7 @@ let elementaOptions
 let inputHipodoge
 let inputCapipepo
 let inputRatigueya
+let petPlayer
 let playerLives = 3
 let enemyLives = 3
 
@@ -120,16 +121,31 @@ function selectionPetPlayer() {
 
     if(inputHipodoge.checked) {
         spantPetPlayer.innerHTML = inputHipodoge.id
+        petPlayer = inputHipodoge.id
     } else if(inputCapipepo.checked) {
         spantPetPlayer.innerHTML = inputCapipepo.id
+        petPlayer = inputCapipepo.id
     } else if(inputRatigueya.checked) {
         spantPetPlayer.innerHTML = inputRatigueya.id
+        petPlayer = inputRatigueya.id
     } else {
         alert('Select a pet')
         restarGame()
     }
 
+    extractAttacks(petPlayer)
     selectionPetEnemy()
+}
+
+function extractAttacks(petPlayer) {
+    let attacks
+    for (let i = 0; i < petElementa.length; i++) {
+        if (petPlayer === petElementa[i].name) {
+            attacks = petElementa[i].attacks
+        }
+        
+    }
+    
 }
 
 function selectionPetEnemy() {
