@@ -8,9 +8,6 @@ const buttonRestar = document.getElementById('button-restar')
 
 
 const sectionPet = document.getElementById('select-pet')
-const inputHipodoge = document.getElementById('hipodoge')
-const inputCapipepo = document.getElementById('capipepo')
-const inputRatigueya = document.getElementById('ratigueya')
 const spantPetPlayer = document.getElementById('pet-player')
 
 
@@ -30,6 +27,9 @@ let petElementa = []
 let playerAttack
 let enemyAttack
 let elementaOptions
+let inputHipodoge
+let inputCapipepo
+let inputRatigueya
 let playerLives = 3
 let enemyLives = 3
 
@@ -81,7 +81,7 @@ function startGame() {
 
     petElementa.forEach((elementa) => {
         elementaOptions = `
-        <input type="radio" name="pet" id=${elementa.name}/>
+        <input type="radio" name="pet" id=${elementa.name} />
         <label class="card-of-elementa" for=${elementa.name}>
             <p>${elementa.name}</p>
             <img src=${elementa.image} alt=${elementa.name}>
@@ -89,6 +89,9 @@ function startGame() {
         `
     containerCards.innerHTML += elementaOptions
 
+     inputHipodoge = document.getElementById('Hipodoge')
+     inputCapipepo = document.getElementById('Capipepo')
+     inputRatigueya = document.getElementById('Ratigueya')
     })
 
     
