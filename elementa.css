@@ -44,6 +44,10 @@ body {
     align-items: center;
 }
 
+.card-of-elementa:hover {
+    background-color: violet;
+}
+
 .card-of-elementa img {
     width: 80px;
 }
