@@ -37,6 +37,7 @@ class Elementa {
         this.name = name
         this.image = image
         this.life = life
+        this.attacks = []
     }
 }
 
@@ -46,7 +47,29 @@ let capipepo = new Elementa('Capipepo', 'images/capipepo.png', 5)
 
 let ratigueya = new Elementa('Capipepo', 'images/ratigueya.png', 5)
 
-petElementa.push(hipodoge, capipepo, ratigueya)
+hipodoge.attacks.push(
+    { name: '💧', id: 'button-water'},
+    { name: '💧', id: 'button-water'},
+    { name: '💧', id: 'button-water'},
+    { name: '🔥', id: 'button-fire'},
+    { name: '🌱', id: 'button-earth'},
+)
+
+capipepo.attacks.push(
+    { name: '🌱', id: 'button-earth'},
+    { name: '🌱', id: 'button-earth'},
+    { name: '🌱', id: 'button-earth'},
+    { name: '💧', id: 'button-water'},
+    { name: '🔥', id: 'button-fire'},
+)
+
+ratigueya.attacks.push(
+    { name: '🔥', id: 'button-fire'},
+    { name: '🔥', id: 'button-fire'},
+    { name: '🔥', id: 'button-fire'},
+    { name: '💧', id: 'button-water'},
+    { name: '🌱', id: 'button-earth'},
+)
 
 function startGame() {
     
