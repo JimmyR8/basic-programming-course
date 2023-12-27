@@ -26,6 +26,7 @@ const palyerOfAttack = document.getElementById('player-of-attack')
 const enemyOfAttack = document.getElementById('enemy-of-attack')
 
 
+let petElementa = []
 let playerAttack
 let enemyAttack
 let playerLives = 3
@@ -40,9 +41,12 @@ class Elementa {
 }
 
 let hipodoge = new Elementa('Hipodoge', 'images/hipodoge.png', 5)
- let capipepo = new Elementa('Capipepo', 'images/capipepo.png', 5)
 
- let ratigueya = new Elementa('Capipepo', 'images/ratigueya.png', 5)
+let capipepo = new Elementa('Capipepo', 'images/capipepo.png', 5)
+
+let ratigueya = new Elementa('Capipepo', 'images/ratigueya.png', 5)
+
+petElementa.push(hipodoge, capipepo, ratigueya)
 
 function startGame() {
     
