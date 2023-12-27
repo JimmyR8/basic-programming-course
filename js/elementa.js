@@ -24,11 +24,12 @@ const spantEnemyLives = document.getElementById('enemy-lives')
 const sectionMessage = document.getElementById('result')
 const palyerOfAttack = document.getElementById('player-of-attack')
 const enemyOfAttack = document.getElementById('enemy-of-attack')
-
+const containerCards = document.getElementById('container-cards')
 
 let petElementa = []
 let playerAttack
 let enemyAttack
+let elementaOptions
 let playerLives = 3
 let enemyLives = 3
 
@@ -45,7 +46,7 @@ let hipodoge = new Elementa('Hipodoge', 'images/hipodoge.png', 5)
 
 let capipepo = new Elementa('Capipepo', 'images/capipepo.png', 5)
 
-let ratigueya = new Elementa('Capipepo', 'images/ratigueya.png', 5)
+let ratigueya = new Elementa('Ratigueya', 'images/ratigueya.png', 5)
 
 hipodoge.attacks.push(
     { name: '💧', id: 'button-water'},
@@ -71,10 +72,24 @@ ratigueya.attacks.push(
     { name: '🌱', id: 'button-earth'},
 )
 
+petElementa.push(hipodoge, capipepo, ratigueya)
+
 function startGame() {
     
     sectionAttack.style.display = 'none'
     sectionRestar.style.display = 'none'
+
+    petElementa.forEach((elementa) => {
+        elementaOptions = `
+        <input type="radio" name="pet" id=${elementa.name}/>
+        <label class="card-of-elementa" for=${elementa.name}>
+            <p>${elementa.name}</p>
+            <img src=${elementa.image} alt=${elementa.name}>
+        </label>
+        `
+    containerCards.innerHTML += elementaOptions
+
+    })
 
     
     buttonPetPlayer.addEventListener('click', selectionPetPlayer)  
