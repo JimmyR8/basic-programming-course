@@ -1,9 +1,6 @@
 const sectionAttack = document.getElementById('select-attack')
 const sectionRestar = document.getElementById('button-restar')
 const buttonPetPlayer = document.getElementById('button-pet')
-const buttonFire = document.getElementById('button-fire')
-const buttonWater = document.getElementById('button-water')
-const buttonEarth = document.getElementById('button-earth') 
 const buttonRestar = document.getElementById('button-restar')
 
 
@@ -22,6 +19,7 @@ const sectionMessage = document.getElementById('result')
 const palyerOfAttack = document.getElementById('player-of-attack')
 const enemyOfAttack = document.getElementById('enemy-of-attack')
 const containerCards = document.getElementById('container-cards')
+const containerAttacks = document.getElementById('container-attacks')
 
 let petElementa = []
 let playerAttack
@@ -31,6 +29,10 @@ let inputHipodoge
 let inputCapipepo
 let inputRatigueya
 let petPlayer
+let elementasAttacks
+let buttonFire
+let buttonWater
+let buttonEarth 
 let playerLives = 3
 let enemyLives = 3
 
@@ -99,11 +101,7 @@ function startGame() {
     buttonPetPlayer.addEventListener('click', selectionPetPlayer)  
 
     
-    buttonFire.addEventListener('click', fireAttack)
-    
-    buttonWater.addEventListener('click', waterAttack)
-     
-    buttonEarth.addEventListener('click', earthAttack)
+   
 
     
     
@@ -145,7 +143,27 @@ function extractAttacks(petPlayer) {
         }
         
     }
+    showAttacks(attacks)    
+}
+
+function showAttacks(attacks) {
+    attacks.forEach((attack) => {
+        elementasAttacks = `
+        <button id=${attack.id} class="attacks">${attack.name}</button>
+        `
+        containerAttacks.innerHTML += elementasAttacks
+    })
+
+    buttonFire = document.getElementById('button-fire')
+    buttonWater = document.getElementById('button-water')
+    buttonEarth = document.getElementById('button-earth') 
+
     
+    buttonFire.addEventListener('click', fireAttack)
+    
+    buttonWater.addEventListener('click', waterAttack)
+     
+    buttonEarth.addEventListener('click', earthAttack)
 }
 
 function selectionPetEnemy() {
