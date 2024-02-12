@@ -22,7 +22,7 @@ const containerCards = document.getElementById('container-cards')
 const containerAttacks = document.getElementById('container-attacks')
 
 let petElementa = []
-let playerAttack
+let playerAttack = []
 let enemyAttack
 let elementaOptions
 let inputHipodoge
@@ -32,7 +32,8 @@ let petPlayer
 let elementasAttacks
 let buttonFire
 let buttonWater
-let buttonEarth 
+let buttonEarth
+let buttons = []
 let playerLives = 3
 let enemyLives = 3
 
@@ -100,11 +101,6 @@ function startGame() {
     
     buttonPetPlayer.addEventListener('click', selectionPetPlayer)  
 
-    
-   
-
-    
-    
     buttonRestar.addEventListener('click', restarGame)
 }
 
@@ -149,42 +145,44 @@ function extractAttacks(petPlayer) {
 function showAttacks(attacks) {
     attacks.forEach((attack) => {
         elementasAttacks = `
-        <button id=${attack.id} class="attacks">${attack.name}</button>
+        <button id=${attack.id} class="attacks BAttack">${attack.name}</button>
         `
         containerAttacks.innerHTML += elementasAttacks
     })
 
     buttonFire = document.getElementById('button-fire')
     buttonWater = document.getElementById('button-water')
-    buttonEarth = document.getElementById('button-earth') 
+    buttonEarth = document.getElementById('button-earth')
+    buttons = document.querySelectorAll('.BAttack')
+}
 
-    
-    buttonFire.addEventListener('click', fireAttack)
-    
-    buttonWater.addEventListener('click', waterAttack)
-     
-    buttonEarth.addEventListener('click', earthAttack)
+function sequenceAttack() {
+    buttons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            if (e.target.textContext === '🔥') {
+                playerAttack.push('FIRE')
+                console.log(playerAttack)
+                button.style.background = '#112f58' 
+            } else if (e.target.textContext === '💧') {
+                playerAttack.push('WATER')
+                console.log(playerAttack)
+                button.style.background = '#112f58'
+            } else {
+                playerAttack.push('EARTH')
+                console.log(playerAttack)
+                button.style.background = '#112f58'
+            }
+        })
+    })
+
 }
 
 function selectionPetEnemy() {
     let petRandom = random(0, petElementa.length - 1)
     
     spantPetPEnemy.innerHTML = petElementa[petRandom].name
-}
 
-function fireAttack() {
-    playerAttack = 'FIRE 🔥'
-    enemyAttackRandom()
-}
-
-function waterAttack() {
-    playerAttack = 'WATER 💧'
-    enemyAttackRandom()
-}
-
-function earthAttack() {
-    playerAttack = 'EARTH 🌱'
-    enemyAttackRandom()
+    sequenceAttack()
 }
 
 function enemyAttackRandom() {
