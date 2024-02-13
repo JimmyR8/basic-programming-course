@@ -23,13 +23,14 @@ const containerAttacks = document.getElementById('container-attacks')
 
 let petElementa = []
 let playerAttack = []
-let enemyAttack
+let enemyAttack = []
 let elementaOptions
 let inputHipodoge
 let inputCapipepo
 let inputRatigueya
 let petPlayer
 let elementasAttacks
+let elementaAttacksEnemy
 let buttonFire
 let buttonWater
 let buttonEarth
@@ -159,43 +160,43 @@ function showAttacks(attacks) {
 function sequenceAttack() {
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
-            if (e.target.textContext === '🔥') {
+            if (e.target.textContent === '🔥') {
                 playerAttack.push('FIRE')
                 console.log(playerAttack)
-                button.style.background = '#112f58' 
-            } else if (e.target.textContext === '💧') {
+                button.style.background = '#F72798' 
+            } else if (e.target.textContent === '💧') {
                 playerAttack.push('WATER')
                 console.log(playerAttack)
-                button.style.background = '#112f58'
+                button.style.background = '#F72798'
             } else {
                 playerAttack.push('EARTH')
                 console.log(playerAttack)
-                button.style.background = '#112f58'
+                button.style.background = '#F72798'
             }
+            enemyAttackRandom()
         })
     })
-
 }
 
 function selectionPetEnemy() {
     let petRandom = random(0, petElementa.length - 1)
     
     spantPetPEnemy.innerHTML = petElementa[petRandom].name
-
+    elementaAttacksEnemy = petElementa[petRandom].attacks
     sequenceAttack()
 }
 
 function enemyAttackRandom() {
-    let randomAttack = random(1,3)
+    let randomAttack = random(0, elementaAttacksEnemy.length -1)
 
-    if(randomAttack == 1) {
-        enemyAttack = 'FIRE 🔥'
-    } else if(randomAttack == 2) {
-        enemyAttack = 'WATER 💧'
+    if(randomAttack == 0 || randomAttack == 1 ) {
+        enemyAttack.push('FIRE')
+    } else if(randomAttack == 3 || randomAttack == 4) {
+        enemyAttack.push('WATER')
     } else {
-        enemyAttack = 'EARTH 🌱'
+        enemyAttack.push('EARTH')
     }
-
+    console.log(enemyAttack)
     combat()
 }
 
