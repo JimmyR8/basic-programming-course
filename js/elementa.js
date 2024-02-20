@@ -35,6 +35,8 @@ let buttonFire
 let buttonWater
 let buttonEarth
 let buttons = []
+let indexPlayerAttack
+let indexEnemyAttack
 let playerLives = 3
 let enemyLives = 3
 
@@ -197,10 +199,30 @@ function enemyAttackRandom() {
         enemyAttack.push('EARTH')
     }
     console.log(enemyAttack)
-    combat()
+    startFight()
+}
+
+function startFight() {
+    if (playerAttack.length === 5) {
+        combat()
+    }
+}
+
+function indexBothOpponent(player, enemy) {
+    indexPlayerAttack = playerAttack[player]
+    indexEnemyAttack = enemyAttack[enemy]
 }
 
 function combat() {
+
+    for (let index = 0; index < playerAttack.length; index++) {
+        if (playerAttack[index] === enemyAttack[index]) {
+            indexBothOpponent(index, index)
+            createMenssage('TIE')
+        }
+        
+    }
+
     if(enemyAttack == playerAttack) {
         createMenssage('TIE 😐')
     } else if(playerAttack == 'FIRE 🔥' && enemyAttack == 'EARTH 🌱') {
@@ -238,8 +260,8 @@ function createMenssage(result) {
     let newEnemyOfAttack = document.createElement('p')
 
     sectionMessage.innerHTML = result
-    newPlayerOfAttack.innerHTML = playerAttack
-    newEnemyOfAttack.innerHTML = enemyAttack
+    newPlayerOfAttack.innerHTML = indexPlayerAttack
+    newEnemyOfAttack.innerHTML = indexEnemyAttack
 
     palyerOfAttack.appendChild(newPlayerOfAttack)
     enemyOfAttack.appendChild(newEnemyOfAttack)
