@@ -37,6 +37,8 @@ let buttonEarth
 let buttons = []
 let indexPlayerAttack
 let indexEnemyAttack
+let playerVictorys = 0
+let enemyVictorys = 0
 let playerLives = 3
 let enemyLives = 3
 
@@ -219,38 +221,40 @@ function combat() {
         if (playerAttack[index] === enemyAttack[index]) {
             indexBothOpponent(index, index)
             createMenssage('TIE')
+            playerVictorys++ 
+            spantPlayerLives.innerHTML = playerVictorys
+        } else if(playerAttack[index] == 'FIRE 🔥' && enemyAttack[index] == 'EARTH 🌱') {
+            indexBothOpponent(index, index)
+            playerVictorys++ 
+            spantPlayerLives.innerHTML = playerVictorys
+            createMenssage('YOU WIN 🥳')
+        } else if(playerAttack[index] == 'WATER 💧' && enemyAttack[index] == 'FIRE 🔥') {
+            indexBothOpponent(index, index)
+            playerVictorys++ 
+            spantPlayerLives.innerHTML = playerVictorys
+            createMenssage('YOU WIN 🥳')
+        } else if(playerAttack[index] == 'EARTH 🌱' && enemyAttack[index] == 'WATER 💧') {
+            indexBothOpponent(index, index)
+            playerVictorys++ 
+            spantPlayerLives.innerHTML = playerVictorys
+            createMenssage('YOU WIN 🥳')
+        } else {
+            indexBothOpponent(index, index)
+            enemyVictorys++ 
+            spantEnemyLives.innerHTML = enemyVictorys
+            createMenssage('YOU LOSE 😭')
         }
-        
     }
-
-    if(enemyAttack == playerAttack) {
-        createMenssage('TIE 😐')
-    } else if(playerAttack == 'FIRE 🔥' && enemyAttack == 'EARTH 🌱') {
-        enemyLives--
-        spantEnemyLives.innerHTML = enemyLives
-        createMenssage('YOU WIN 🥳')
-    } else if(playerAttack == 'WATER 💧' && enemyAttack == 'FIRE 🔥') {
-        enemyLives--
-        spantEnemyLives.innerHTML = enemyLives
-        createMenssage('YOU WIN 🥳')
-    } else if(playerAttack == 'EARTH 🌱' && enemyAttack == 'WATER 💧') {
-        enemyLives--
-        spantEnemyLives.innerHTML = enemyLives
-        createMenssage('YOU WIN 🥳')
-    } else {
-        playerLives--
-        spantPlayerLives.innerHTML = playerLives
-        createMenssage('YOU LOSE 😭')
-    }
-
-    reviewLives()
+    reviewVictorys()
 }
 
-function reviewLives() {
-    if(enemyLives == 0) { 
-        endgameMessage('YOU WIN THE GAME 🥳')
-    } else if(playerLives == 0) {
-        endgameMessage('YOU LOST THE GAME 😢')
+function reviewVictorys() {
+    if(playerVictorys === enemyVictorys) { 
+        endGameMessage('THIS IS A TIE 😐')
+    } else if(playerVictorys > enemyVictorys) {
+        endGameMessage('YOU WIN THE GAME! 🥳')
+    } else {
+        endGameMessage('YOU LOSE THE GAME 😢')
     }
 }
 
@@ -267,7 +271,7 @@ function createMenssage(result) {
     enemyOfAttack.appendChild(newEnemyOfAttack)
 }
 
-function endgameMessage(endResult) {
+function endGameMessage(endResult) {
     
     
     sectionMessage.innerHTML = endResult
